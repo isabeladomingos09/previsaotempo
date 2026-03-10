@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação Meteorológica Hacker</title>
+    
+    <!-- Fontes e Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS (Para o Mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="default-bg">
+
+    <div class="container">
+        <h1>Clima Online</h1>
+        
+        <!-- Área de Busca -->
+        <div class="search-box">
+            <input type="text" id="input-cidade" placeholder="Buscar cidade...">
+            <button id="btn-buscar">Buscar</button>
+            <button id="btn-geo" title="Minha Localização">📍</button>
+        </div>
+
+        <!-- Desafio: Histórico de Cidades -->
+        <div id="historico" class="historico-container"></div>
+
+        <!-- Card de Clima Principal -->
+        <div id="card-clima" class="card hidden">
+            <div class="main-info">
+                <h2 id="cidade-nome">Cidade</h2>
+                <div class="temp-wrapper">
+                    <img id="clima-icone" src="" alt="ícone">
+                    <span id="clima-temp">--°</span>
+                </div>
+                <p id="clima-descricao">Descrição</p>
+            </div>
+
+            <!-- Bento Grid: Detalhes extras -->
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <span class="label">Umidade</span>
+                    <span id="detalhe-umidade" class="value">--%</span>
+                </div>
+                <div class="bento-item">
+                    <span class="label">Vento</span>
+                    <span id="detalhe-vento" class="value">-- km/h</span>
+                </div>
+                <div class="bento-item wide">
+                    <span class="label">Sensação Térmica</span>
+                    <span id="detalhe-sensacao" class="value">--°C</span>
+                </div>
+            </div>
+
+            <!-- Mapa Interativo -->
+            <div id="mapa"></div>
+        </div>
+
+        <p id="erro" class="erro-msg hidden">Cidade não encontrada ou erro na busca!</p>
+    </div>
+
+    <!-- Leaflet JS (Para o Mapa) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

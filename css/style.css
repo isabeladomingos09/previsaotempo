@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: background 1s ease;
+    padding: 20px;
+}
+
+/* Backgrounds Dinâmicos */
+.default-bg { background: linear-gradient(135deg, #00b4db, #0083b0); }
+body.chuva { background: linear-gradient(135deg, #2c3e50, #000000); }
+body.limpo { background: linear-gradient(135deg, #2980b9, #6dd5fa); }
+body.nuvens { background: linear-gradient(135deg, #757f9a, #d7dde8); color: #333; }
+body.nuvens .container { background: rgba(0, 0, 0, 0.1); border-color: rgba(0,0,0,0.1); }
+
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 35px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+button {
+    background: #ff9f43;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btn-geo { background: #2ed573; }
+button:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+/* Histórico */
+.historico-container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.btn-historico {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: inherit;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.bento-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bento-item.wide { grid-column: span 2; display: flex; justify-content: space-between; align-items: center; }
+
+#clima-temp { font-size: 4rem; font-weight: 800; }
+.temp-wrapper { display: flex; justify-content: center; align-items: center; }
+
+/* Mapa */
+#mapa {
+    height: 180px;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hidden { display: none; }
+.erro-msg { color: #ff6b6b; font-weight: bold; margin-top: 10px; }
