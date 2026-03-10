@@ -1,0 +1,154 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* Mantendo seus tons de azul com um gradiente mais rico */
+    background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+
+/* Container Principal (Efeito Vidro) */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2.5rem;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.4s ease;
+}
+
+h1 { 
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Caixa de Pesquisa */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+input {
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 159, 67, 0.4);
+}
+
+/* Botão (Mantendo seu Laranja/Vermelho) */
+button {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    background: #ff9f43;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 159, 67, 0.3);
+}
+
+button:hover { 
+    background: #ee5253; 
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Card de Clima (Animação ao aparecer) */
+.card { 
+    margin-top: 1rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#cidade-nome {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+#clima-icone {
+    width: 100px;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+}
+
+#clima-temp {
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 5px 0;
+    line-height: 1;
+}
+
+#clima-descricao {
+    text-transform: capitalize;
+    font-weight: 300;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Estado Escondido e Erro */
+.hidden { 
+    display: none; 
+}
+
+.erro-msg {
+    background: rgba(238, 82, 83, 0.2);
+    border: 1px solid #ee5253;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    #clima-temp {
+        font-size: 3.2rem;
+    }
+}

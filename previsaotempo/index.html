@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação Meteorológica Pessoal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Clima Online</h1>
+        
+        <div class="search-box">
+            <input type="text" id="input-cidade" placeholder="Digite o nome da cidade...">
+            <button id="btn-buscar">Buscar</button>
+        </div>
+
+        <!-- O card começa escondido e só aparece se houver dados -->
+        <div id="card-clima" class="card hidden">
+            <h2 id="cidade-nome">Cidade</h2>
+            <img id="clima-icone" src="" alt="Ícone do tempo">
+            <p id="clima-temp">--°C</p>
+            <p id="clima-descricao">Descrição</p>
+        </div>
+
+        <p id="erro" class="erro-msg hidden">Cidade não encontrada. Tente novamente!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
